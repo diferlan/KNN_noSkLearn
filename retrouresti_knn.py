@@ -36,10 +36,12 @@ x = escalar.fit_transform(x)
 
 def distance(x1,x2):
   return np.sqrt(np.sum(x1 - x2)**2)
-
+print('Entrenando...')
+time.sleep(2)
 def knn(X_train,X_test, y_train,k=3):
   y_pred = [] #Array que guardará las predicciones
   for x in X_test: #Itera en todos los valores
+    print('.') 
     #Calcula las distancias de un punto de la prueba con cada puntos
     distances= np.array([distance(x,x_sample) for x_sample in X_train])
     nn_labels = np.argsort(distances)[:k] #Toma los indices de los k puntos más cercanos
